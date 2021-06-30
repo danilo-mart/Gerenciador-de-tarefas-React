@@ -1,15 +1,17 @@
 import React from "react";
+import {Header} from '../componentes/Header'
 
 export const Home = props => {
-    return(
-        <>
-        <hi> Gerenciador de Tarefas - Home</hi>
-        <a onClick={e => {
-            localStorage.removeItem('accessToken');
+
+    const sair = () => {
+        localStorage.removeItem('accessToken');
             localStorage.removeItem('usuarioNome');
             localStorage.removeItem('usuarioEmail');   
-            props.setAccessToken('');       
-        }}>Sair</a>
+            props.setAccessToken(''); 
+    }
+    return(
+        <>
+            <Header sair={sair}/>
         </>
     );
 }
