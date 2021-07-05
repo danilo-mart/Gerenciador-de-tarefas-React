@@ -34,6 +34,8 @@ export const Login = props => {
             console.log(e);
             if(e?.response?.data?.erros){
                 setMsgErro(e.response.data.erros);
+            }else{
+                setMsgErro(e.response('Não foi possivel fazer login, fale contato com o Administrador'))
             }
         }
         setLoading(false);
